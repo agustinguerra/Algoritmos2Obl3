@@ -1,0 +1,438 @@
+********************************************* Pruebas Cola de Prioridad Extendida OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola no debe ser nula.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola no está llena.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola está vacía.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: El largo de la cola es 1.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola no está vacía.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento1 pertenece a la cola.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: El elemento de mayor prioridad es elemento1.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento1 tiene prioridad 1
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: El largo de la cola es 0.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola está vacía.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: El largo de la cola es 8.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento0 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento0 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento1 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento1 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento2 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento2 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento3 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento3 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento4 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento4 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento5 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento5 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento6 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento6 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: elemento7 esta definida.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo correctamente el elemento elemento7 y su prioridad
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento0 - 0  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento1 - 1  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento2 - 2  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento3 - 3  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento4 - 4  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento5 - 5  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento6 - 6  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo  elemento7 - 7  correctamente
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La cola está vacía.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: El largo de la cola es 0.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Prioridad A OK *********************************************
+
+
+
+
+
+********************************************* Pruebas Pruebas Tablero 1 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 2 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 2 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 3 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 3 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 5 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 4 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 8 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 5 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 10 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 6 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero no tiene solucion
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Prioridad B OK *********************************************
+
+
+
+
+
+********************************************* Pruebas Pruebas Tablero 1 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 2 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 2 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 3 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 3 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 5 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 4 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 8 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 5 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: Se obtuvo 4294967295 y se esperaba 10 movimientos
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución retornada es vacía.
+  Retorno obtenido ERROR, se esperaba OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 6 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero no tiene solucion
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+  +------------------------------+
+    Pruebas Correctas : 39
+    Pruebas Incorrectas: 30
+    Pruebas NI: 0
+  +------------------------------+

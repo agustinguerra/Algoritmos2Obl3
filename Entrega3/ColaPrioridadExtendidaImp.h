@@ -6,9 +6,9 @@
 #include "Array.h"
 
 template <class T, class P>
-class ColaPrioridadExtendidaImp : public ColaPrioridadExtendida<T, P> {
+class ColaPrioridadExtendidaImp : public ColaPrioridadExtendida<T,P> {
 public:
-	virtual ~ColaPrioridadExtendida() {}
+	~ColaPrioridadExtendidaImp() {}
 
 	//PRE: Existen ambas posiciones
 	//POS: Swapea las dos posiciones
@@ -16,7 +16,7 @@ public:
 
 	// PRE: -
 	// POS: Crea la cola prioridad
-	ColaPrioridadExtendidaImp(Puntero<FuncionHash<T>> fHash, const Comparador<T>& compP, const Comparador<P>& compT);
+	ColaPrioridadExtendidaImp(Puntero<FuncionHash<T>> fHash, const Comparador<T>& compT, const Comparador<P>& compP);
 
 	// PRE: -
 	// POS: Inserta el elemento e con prioridad p
@@ -41,6 +41,10 @@ public:
 	// PRE: -
 	// POS: Retorna true si y solo si el elemento e pertenece a la cola.
 	bool Pertenece(const T& e) const override;
+
+	//PRE: Hay elemento en la posicion
+	//POS: Devuelve la cp sin ese elemento
+	void eliminarEnPosicion(int pos);
 
 	// PRE: El elemento e pertenece a la cola.
 	// POS: El elemento e tiene una nueva prioridad p.
@@ -67,7 +71,7 @@ public:
 	Puntero<ColaPrioridadExtendida<T, P>> Clon() const override;
 
 	//Retorna el iterador para recorrer la PQ
-	Iterador<T> ObtenerIterador() const override;
+	Iterador<Tupla<T,P>> ObtenerIterador() const override;
 
 private:
 	Array<Tupla<T, P>> heap;

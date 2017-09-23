@@ -2,20 +2,9 @@
   ColaPrioridadExtendidaImp.cpp
   main.cpp
   PrioridadA.cpp
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(12): error C2065: 'Tupla': undeclared identifier (compiling source file ColaPrioridadExtendidaImp.cpp)
-  c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(64): note: see reference to class template instantiation 'ColaPrioridadExtendida<T,P>' being compiled (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(12): error C2977: 'Iterable': too many template arguments (compiling source file ColaPrioridadExtendidaImp.cpp)
-  c:\users\usuario\downloads\entrega3\framework\iterable.h(7): note: see declaration of 'Iterable' (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(12): error C2955: 'Iterable': use of class template requires template argument list (compiling source file ColaPrioridadExtendidaImp.cpp)
-  c:\users\usuario\downloads\entrega3\framework\iterable.h(7): note: see declaration of 'Iterable' (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(12): error C2143: syntax error: missing ',' before '>' (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(31): error C2143: syntax error: missing ';' before '<' (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(31): error C2433: 'ColaPrioridadExtendida<T,P>::Tupla': 'virtual' not permitted on data declarations (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendida.h(31): error C2238: unexpected token(s) preceding ';' (compiling source file ColaPrioridadExtendidaImp.cpp)
-c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendidaimp.h(11): error C2523: 'ColaPrioridadExtendidaImp<T,P>::~ColaPrioridadExtendida': destructor tag mismatch (compiling source file ColaPrioridadExtendidaImp.cpp)
-  c:\users\usuario\downloads\entrega3\entrega3\colaprioridadextendidaimp.h(78): note: see reference to class template instantiation 'ColaPrioridadExtendidaImp<T,P>' being compiled (compiling source file ColaPrioridadExtendidaImp.cpp)
   PrioridadB.cpp
   Sistema.cpp
   SistemaTemplates.cpp
   Tablero.cpp
+  Obligatorio.vcxproj -> C:\Users\Usuario\Documents\GitHub\Algoritmos2Obl3\Entrega3\Debug\Obligatorio.exe
+  Obligatorio.vcxproj -> Debug\Obligatorio.pdb (Full PDB)
