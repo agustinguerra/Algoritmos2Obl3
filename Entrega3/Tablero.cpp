@@ -5,25 +5,46 @@
 
 Tablero::Tablero(Matriz<int> bloques, Puntero<Prioridad> p)
 {
-	// Implementar.
+	this->prio = p;
+	this->elTablero = bloques;
 }
 	
 nat Tablero::CalcularPrioridad()
 {
-	// Implementar a partir de la prioridad recibida en el constructor.
-	return 0;
+	Matriz<int> matrizCopia(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
+	int lar = elTablero.ObtenerLargo();
+	for (int i = 0; i < lar; i++) {
+		for (int j = 0; j < lar; j++) {
+			matrizCopia[i][j] = elTablero[i][j];
+		}
+	}
+	Tablero tableroCopia = Tablero(matrizCopia, this->prio);
+	return this->prio->CalcularPrioridad(tableroCopia);
 }
 		
 nat Tablero::ObtenerCantidadDeMovimientos()
 {
+
 	// Implementar.
 	return 0;
 }
 
 bool Tablero::operator==(const Tablero& t ) const
 {
-	// Implementar.
-	return false;
+	if (t.ObtenerTablero().ObtenerAncho() != this->elTablero.ObtenerAncho()) {
+		return false;
+	}
+	else {
+		int lar = elTablero.ObtenerLargo();
+		for (int i = 0; i < lar; i++) {
+			for (int j = 0; j < lar; j++) {
+				if (t.ObtenerTablero()[i][j] != elTablero[i][j]) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
 }
 	
 
@@ -36,8 +57,7 @@ Iterador<Tablero> Tablero::Vecinos()
 
 Matriz<int> Tablero::ObtenerTablero() const
 {
-	// Implementar.
-	return Matriz<int>();
+	return elTablero;
 }
 
 Cadena Tablero::Imprimir() const

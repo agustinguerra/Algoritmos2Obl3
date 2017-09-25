@@ -33,7 +33,8 @@ public :
 	//Retorna la representación del tablero como cadena.
 	Cadena Imprimir() const;
 private:
-	//Atributos que considre necesarios para resolver el problema. 
+	Matriz<int> elTablero;
+	Puntero<Prioridad> prio;
 };
 
 #endif
