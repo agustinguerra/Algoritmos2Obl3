@@ -10,6 +10,14 @@
 #include "ColaPrioridadExtendida.h"
 #include "FuncionHash.h"
 
+class NodoTablero {
+public:
+	Tablero dato;
+	Puntero<NodoTablero<Tablero>> padre;
+	NodoTablero(Tablero&dato) : dato(dato), padre(nullptr) {  };
+};
+
+
 class Sistema
 {
 public:
@@ -32,6 +40,9 @@ public:
 
 
 private:
+	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>, int>> cp;
+	Tablero tableroFinal;
+	Tablero tableroInicial;
 	//Atributos necesarios para cumplir con las operaciones.
 };
 

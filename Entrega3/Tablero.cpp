@@ -7,6 +7,7 @@ Tablero::Tablero(Matriz<int> bloques, Puntero<Prioridad> p)
 {
 	this->prio = p;
 	this->elTablero = bloques;
+	this->mov = 0;
 }
 	
 nat Tablero::CalcularPrioridad()
@@ -19,14 +20,12 @@ nat Tablero::CalcularPrioridad()
 		}
 	}
 	Tablero tableroCopia = Tablero(matrizCopia, this->prio);
-	return this->prio->CalcularPrioridad(tableroCopia);
+	return (this->prio->CalcularPrioridad(tableroCopia)+mov);
 }
 		
 nat Tablero::ObtenerCantidadDeMovimientos()
 {
-
-	// Implementar.
-	return 0;
+	return mov;
 }
 
 bool Tablero::operator==(const Tablero& t ) const
@@ -50,7 +49,7 @@ bool Tablero::operator==(const Tablero& t ) const
 
 Iterador<Tablero> Tablero::Vecinos()
 {
-	// Implementar.
+	
 	return NULL;
 }
 	

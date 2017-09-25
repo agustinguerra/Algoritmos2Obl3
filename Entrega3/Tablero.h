@@ -35,6 +35,7 @@ public :
 private:
 	Matriz<int> elTablero;
 	Puntero<Prioridad> prio;
+	int mov;
 };
 
 #endif

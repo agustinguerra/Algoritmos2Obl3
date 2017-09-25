@@ -9,7 +9,25 @@ Sistema::Sistema()
 
 void Sistema::EstablecerTableroInicial(Tablero inicial)
 {
-	//Implementar.
+	this->tableroInicial = inicial;
+	int tamano = inicial.ObtenerTablero().ObtenerAncho();
+	Matriz<int> mTablero(tamano);
+	int contador = 1;
+	for (int i = 0; i < tamano; i++) {
+		for (int j = 0; j < tamano - 1; j++) {
+			mTablero[i][j] = contador;
+			contador++;
+		}
+	}
+	Tablero tabFinal = Tablero(mTablero, nullptr);
+	this->tableroFinal = tabFinal;
+	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>> cp = new ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>(nullptr, Comparador<int>::Default, Comparador<int>::Default);
+	this->cp = cp;
+	Puntero<NodoTablero> nodoUno = new NodoTablero(inicial);
+	cp->InsertarConPrioridad(nodoUno, nodoUno->dato.CalcularPrioridad());
+	if (TieneSolucion()) {
+		Solucionar();
+	}
 }
 
 bool Sistema::TieneSolucion()
@@ -20,13 +38,14 @@ bool Sistema::TieneSolucion()
 	
 int Sistema::Movimientos()
 {
-	//Implemetar.
-	return -1;
+	return this->tableroInicial.ObtenerCantidadDeMovimientos();
 }
 
 Iterador<Tablero> Sistema::Solucionar()
 {
-	//Implementar.
+	Puntero<NodoTablero> primerT = cp->EliminarElementoMayorPrioridad();
+	cp->Vaciar();
+
 	return NULL;
 }
 
