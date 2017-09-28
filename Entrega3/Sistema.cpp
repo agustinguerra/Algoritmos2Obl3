@@ -21,7 +21,7 @@ void Sistema::EstablecerTableroInicial(Tablero inicial)
 	}
 	Tablero tabFinal = Tablero(mTablero, nullptr);
 	this->tableroFinal = tabFinal;
-	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>> cp = new ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>(nullptr, Comparador<int>::Default, Comparador<int>::Default);
+	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>> cp = new ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>(nullptr,Comparador<int>::Default, Comparador<int>::Default);
 	this->cp = cp;
 	Puntero<NodoTablero> nodoUno = new NodoTablero(inicial);
 	cp->InsertarConPrioridad(nodoUno, nodoUno->dato.CalcularPrioridad());

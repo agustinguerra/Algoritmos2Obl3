@@ -7,16 +7,9 @@
 #include "PrioridadA.h"
 #include "PrioridadB.h"
 #include "Tupla.h"
-#include "ColaPrioridadExtendida.h"
+#include "ColaPrioridadExtendidaImp.h"
 #include "FuncionHash.h"
-
-class NodoTablero {
-public:
-	Tablero dato;
-	Puntero<NodoTablero<Tablero>> padre;
-	NodoTablero(Tablero&dato) : dato(dato), padre(nullptr) {  };
-};
-
+#include "NodoTablero.h"
 
 class Sistema
 {

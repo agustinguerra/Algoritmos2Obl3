@@ -98,6 +98,7 @@
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp" />
     <ClCompile Include="ColaPrioridadExtendidaImp.cpp" />
+    <ClCompile Include="IteradorTablero.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PrioridadA.cpp" />
     <ClCompile Include="PrioridadB.cpp" />
@@ -109,6 +110,8 @@
     <ClInclude Include="CasoDePrueba.h" />
     <ClInclude Include="ColaPrioridadExtendida.h" />
     <ClInclude Include="ColaPrioridadExtendidaImp.h" />
+    <ClInclude Include="IteradorTablero.h" />
+    <ClInclude Include="NodoTablero.h" />
     <ClInclude Include="Prioridad.h" />
     <ClInclude Include="PrioridadA.h" />
     <ClInclude Include="PrioridadB.h" />

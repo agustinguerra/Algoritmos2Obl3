@@ -49,7 +49,20 @@ bool Tablero::operator==(const Tablero& t ) const
 
 Iterador<Tablero> Tablero::Vecinos()
 {
-	
+	//Busco el bloque vacio
+	int xVac = 0;
+	int yVac = 0;
+	int largo = elTablero.ObtenerAncho();
+	for (int i = 0; i < largo; i++) {
+		for (int j = 0; j < largo; j++) {
+			if (elTablero[i][j] == 0) {
+				xVac = i;
+				yVac = j;
+			}
+		}
+	}
+	Iterador<>
+	if ()
 	return NULL;
 }
 	
