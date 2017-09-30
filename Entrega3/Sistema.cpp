@@ -2,6 +2,9 @@
 #define SOLUCION_CPP
 
 #include "Sistema.h"
+#include "IteradorTablero.h"
+#include <iostream>
+
 Sistema::Sistema()
 {
 }
@@ -12,21 +15,28 @@ void Sistema::EstablecerTableroInicial(Tablero inicial)
 	int tamano = inicial.ObtenerTablero().ObtenerAncho();
 	Matriz<int> mTablero(tamano);
 	int contador = 1;
+	int cantCuad = tamano*tamano;
 	for (int i = 0; i < tamano; i++) {
-		for (int j = 0; j < tamano - 1; j++) {
-			mTablero[i][j] = contador;
-			contador++;
+		for (int j = 0; j < tamano; j++) {
+			if (contador==cantCuad) {
+				mTablero[i][j] = 0;
+			}
+			else {
+				mTablero[i][j] = contador;
+				contador++;
+			}
+			
 		}
 	}
 	Tablero tabFinal = Tablero(mTablero, nullptr);
 	this->tableroFinal = tabFinal;
-	//Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>> cp = new ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>(nullptr,Comparador<int>::Default, Comparador<int>::Default);
-	//this->cp = cp;
-	//Puntero<NodoTablero> nodoUno = new NodoTablero(inicial);
-	//cp->InsertarConPrioridad(nodoUno, nodoUno->dato.CalcularPrioridad());
-	//if (TieneSolucion()) {
-	//	Solucionar();
-	//}
+	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>> cp = new ColaPrioridadExtendidaImp<Puntero<NodoTablero>,int>(nullptr,Comparador<Puntero<NodoTablero>>::Default, Comparador<int>::Default);
+	this->cp = cp;
+	Puntero<NodoTablero> nodoUno = new NodoTablero(inicial);
+	cp->InsertarConPrioridad(nodoUno, nodoUno->dato.CalcularPrioridad());
+	if (TieneSolucion()) {
+		Solucionar();
+	}
 }
 
 int calcularInversion(Matriz<int> mat,int pos,int num) {
@@ -83,15 +93,47 @@ bool Sistema::TieneSolucion()
 	
 int Sistema::Movimientos()
 {
-	return this->tableroInicial.ObtenerCantidadDeMovimientos();
+	return this->sol.ObtenerCantidadDeMovimientos();
 }
 
 Iterador<Tablero> Sistema::Solucionar()
 {
-	Puntero<NodoTablero> primerT = cp->EliminarElementoMayorPrioridad();
-	cp->Vaciar();
+	listaTab = this->cp->ObtenerElementoMayorPrioridad();
+	while (!this->cp->EstaVacia()) {
+		listaTab = this->cp->ObtenerElementoMayorPrioridad();
+		
+		this->cp->EliminarElementoMayorPrioridad();
 
-	return NULL;
+		if (listaTab->dato == tableroFinal) {
+			break;
+		}
+		Iterador<Tablero> itTab = listaTab->dato.Vecinos();
+		while (itTab.HayElemento()) {
+			if (!(itTab.ElementoActual() == listaTab->dato)) {
+				Puntero<NodoTablero> tabL = new NodoTablero(itTab.ElementoActual());
+				tabL->padre=listaTab;
+				this->cp->InsertarConPrioridad(tabL, tabL->dato.CalcularPrioridad());
+			}
+			itTab.Avanzar();
+		}
+	}
+	auxRecor = listaTab;
+	int cantElem = 0;
+	while (auxRecor != nullptr) {
+		cantElem++;
+		auxRecor = auxRecor->padre;
+	}
+	esFinal=Array<Tablero>(cantElem);
+	auxRecor = listaTab;
+	for (int i = cantElem-1; i < -1; i--) {
+		if (i == cantElem - 1) {
+			sol = auxRecor->dato;
+		}
+		esFinal[i] = auxRecor->dato;
+		auxRecor = auxRecor->padre;
+	}
+	//Iterador<Tablero> it = new IteradorTablero<Tablero>(listaTab);
+	return esFinal.ObtenerIterador();
 }
 
 

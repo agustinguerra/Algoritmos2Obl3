@@ -205,6 +205,6 @@
 ---------------------------------------------------------------------
 
 ----------------------------- Testeo --------------------------------
-  Comentario: Se obtuvo 0 y se esperaba 2 movimientos
+  Comentario: Se obtuvo 3452816845 y se esperaba 2 movimientos
   Retorno obtenido ERROR, se esperaba OK
 ---------------------------------------------------------------------

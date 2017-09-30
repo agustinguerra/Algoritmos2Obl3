@@ -73,7 +73,7 @@ Iterador<Tablero> Tablero::Vecinos()
 	Tablero tableroCopiaDer;
 	int contador = 0;
 	int tam = elTablero.ObtenerAncho();
-	if (yVac + 1<= tam) {
+	if (yVac + 1< tam) {
 		contador++;
 		Matriz<int> matrizCopiaArriba(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
 		int lar = elTablero.ObtenerLargo();
@@ -83,8 +83,9 @@ Iterador<Tablero> Tablero::Vecinos()
 			}
 		}
 		matrizCopiaArriba[xVac][yVac] = matrizCopiaArriba[xVac][yVac + 1];
-		matrizCopiaArriba[xVac][yVac] = 0;
+		matrizCopiaArriba[xVac][yVac+1] = 0;
 		tableroCopiaArriba = Tablero(matrizCopiaArriba, this->prio);
+		tableroCopiaArriba.mov=this->mov+1;
 		arriba = true;
 	}
 	if (yVac-1>-1) {
@@ -97,8 +98,9 @@ Iterador<Tablero> Tablero::Vecinos()
 			}
 		}
 		matrizCopiaAbajo[xVac][yVac] = matrizCopiaAbajo[xVac][yVac - 1];
-		matrizCopiaAbajo[xVac][yVac] = 0;
+		matrizCopiaAbajo[xVac][yVac-1] = 0;
 		tableroCopiaAbajo = Tablero(matrizCopiaAbajo, this->prio);
+		tableroCopiaAbajo.mov = this->mov + 1;
 		abajo = true;
 	}
 	if (xVac-1>-1) {
@@ -111,11 +113,12 @@ Iterador<Tablero> Tablero::Vecinos()
 			}
 		}
 		matrizCopiaIzq[xVac][yVac] = matrizCopiaIzq[xVac - 1][yVac];
-		matrizCopiaIzq[xVac][yVac] = 0;
+		matrizCopiaIzq[xVac-1][yVac] = 0;
 		tableroCopiaIzq = Tablero(matrizCopiaIzq, this->prio);
+		tableroCopiaIzq.mov = this->mov + 1;
 		izq = true;
 	}
-	if (xVac+1<= tam) {
+	if (xVac+1< tam) {
 		contador++;
 		Matriz<int> matrizCopiaDer(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
 		int lar = elTablero.ObtenerLargo();
@@ -124,9 +127,10 @@ Iterador<Tablero> Tablero::Vecinos()
 				matrizCopiaDer[i][j] = elTablero[i][j];
 			}
 		}
-		matrizCopiaDer[xVac][yVac] = matrizCopiaDer[xVac - 1][yVac];
-		matrizCopiaDer[xVac][yVac] = 0;
+		matrizCopiaDer[xVac][yVac] = matrizCopiaDer[xVac + 1][yVac];
+		matrizCopiaDer[xVac+1][yVac] = 0;
 		tableroCopiaDer = Tablero(matrizCopiaDer, this->prio);
+		tableroCopiaDer.mov = this->mov + 1;
 		der = true;
 	}
 	Array<Tablero> arrayIteracion(contador);

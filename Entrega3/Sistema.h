@@ -36,6 +36,10 @@ private:
 	Puntero<ColaPrioridadExtendidaImp<Puntero<NodoTablero>, int>> cp;
 	Tablero tableroFinal;
 	Tablero tableroInicial;
+	Tablero sol;
+	Puntero<NodoTablero> listaTab;
+	Array<Tablero> esFinal;
+	Puntero<NodoTablero> auxRecor;
 	//Atributos necesarios para cumplir con las operaciones.
 };
 
