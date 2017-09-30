@@ -2,6 +2,8 @@
 #define TABLERO_CPP
 
 #include "Tablero.h"
+#include <string>
+
 
 Tablero::Tablero(Matriz<int> bloques, Puntero<Prioridad> p)
 {
@@ -61,9 +63,91 @@ Iterador<Tablero> Tablero::Vecinos()
 			}
 		}
 	}
-	Iterador<>
-	if ()
-	return NULL;
+	bool arriba = false;
+	bool abajo = false;
+	bool izq = false;
+	bool der = false;
+	Tablero tableroCopiaArriba;
+	Tablero tableroCopiaAbajo;
+	Tablero tableroCopiaIzq;
+	Tablero tableroCopiaDer;
+	int contador = 0;
+	int tam = elTablero.ObtenerAncho();
+	if (yVac + 1<= tam) {
+		contador++;
+		Matriz<int> matrizCopiaArriba(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
+		int lar = elTablero.ObtenerLargo();
+		for (int i = 0; i < lar; i++) {
+			for (int j = 0; j < lar; j++) {
+				matrizCopiaArriba[i][j] = elTablero[i][j];
+			}
+		}
+		matrizCopiaArriba[xVac][yVac] = matrizCopiaArriba[xVac][yVac + 1];
+		matrizCopiaArriba[xVac][yVac] = 0;
+		tableroCopiaArriba = Tablero(matrizCopiaArriba, this->prio);
+		arriba = true;
+	}
+	if (yVac-1>-1) {
+		contador++;
+		Matriz<int> matrizCopiaAbajo(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
+		int lar = elTablero.ObtenerLargo();
+		for (int i = 0; i < lar; i++) {
+			for (int j = 0; j < lar; j++) {
+				matrizCopiaAbajo[i][j] = elTablero[i][j];
+			}
+		}
+		matrizCopiaAbajo[xVac][yVac] = matrizCopiaAbajo[xVac][yVac - 1];
+		matrizCopiaAbajo[xVac][yVac] = 0;
+		tableroCopiaAbajo = Tablero(matrizCopiaAbajo, this->prio);
+		abajo = true;
+	}
+	if (xVac-1>-1) {
+		contador++;
+		Matriz<int> matrizCopiaIzq(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
+		int lar = elTablero.ObtenerLargo();
+		for (int i = 0; i < lar; i++) {
+			for (int j = 0; j < lar; j++) {
+				matrizCopiaIzq[i][j] = elTablero[i][j];
+			}
+		}
+		matrizCopiaIzq[xVac][yVac] = matrizCopiaIzq[xVac - 1][yVac];
+		matrizCopiaIzq[xVac][yVac] = 0;
+		tableroCopiaIzq = Tablero(matrizCopiaIzq, this->prio);
+		izq = true;
+	}
+	if (xVac+1<= tam) {
+		contador++;
+		Matriz<int> matrizCopiaDer(this->elTablero.ObtenerAncho(), this->elTablero.ObtenerAncho());
+		int lar = elTablero.ObtenerLargo();
+		for (int i = 0; i < lar; i++) {
+			for (int j = 0; j < lar; j++) {
+				matrizCopiaDer[i][j] = elTablero[i][j];
+			}
+		}
+		matrizCopiaDer[xVac][yVac] = matrizCopiaDer[xVac - 1][yVac];
+		matrizCopiaDer[xVac][yVac] = 0;
+		tableroCopiaDer = Tablero(matrizCopiaDer, this->prio);
+		der = true;
+	}
+	Array<Tablero> arrayIteracion(contador);
+	contador = 0;
+	if (arriba) {
+		arrayIteracion[contador] = tableroCopiaArriba;
+		contador++;
+	}
+	if (abajo) {
+		arrayIteracion[contador] = tableroCopiaAbajo;
+		contador++;
+	}
+	if (der) {
+		arrayIteracion[contador] = tableroCopiaDer;
+		contador++;
+	}
+	if (izq) {
+		arrayIteracion[contador] = tableroCopiaIzq;
+		contador++;
+	}
+	return arrayIteracion.ObtenerIterador();
 }
 	
 
@@ -74,8 +158,20 @@ Matriz<int> Tablero::ObtenerTablero() const
 
 Cadena Tablero::Imprimir() const
 {
-	// Implementar.
-	return "";
+	string retorno = "";
+	int l = elTablero.ObtenerAncho();
+	for (int i = 0; i < l; i++)
+	{
+		for (int j = 1; j <= l; j++)
+		{
+			retorno = retorno + std::to_string(elTablero[i][j - 1]);
+			if (j % l == 0 && i < l - 1)
+				retorno=retorno + "\n";
+			else
+				retorno =retorno + "-";
+		}
+	}
+	return Cadena(retorno.c_str());
 }
 
 
