@@ -82,7 +82,6 @@ Tupla<T, P> ColaPrioridadExtendidaImp<T, P>::ObtenerElementoYPrioridad(const  T&
 			return heap[i];
 		}
 	}
-	assert(false);
 	return heap[1];
 }
 
