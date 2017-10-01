@@ -36,33 +36,37 @@ void Sistema::EstablecerTableroInicial(Tablero inicial)
 	cp->InsertarConPrioridad(nodoUno, nodoUno->dato.CalcularPrioridad());
 	if (TieneSolucion()) {
 		Solucionar();
+
 	}
 }
 
-int calcularInversion(Matriz<int> mat,int pos,int num) {
+Array<int> aplanarElTablero(Matriz<int> mat)
+{
+	int largo = mat.Largo;
+
+	Array<int>arrayDeTablero(largo*largo, 0);
+
 	int contador = 0;
-	int inversiones = 0;
-	int largo = mat.ObtenerAncho();
 	for (int i = 0; i < largo; i++) {
 		for (int j = 0; j < largo; j++) {
-			if (!(contador < pos)) {
-				if (mat[i][j] < num && mat[i][j]!=0) {
-					inversiones++;
-				}
-			}
+			arrayDeTablero[contador] = mat[i][j];
 			contador++;
 		}
 	}
-	return inversiones;
+	return arrayDeTablero;
 }
 
 int calcularInversionTablero(Matriz<int> mat) {
 	int inversionesTotales = 0;
 	int contador = 0;
-	int largo = mat.ObtenerAncho();
-	for (int i = 0; i < largo; i++) {
-		for (int j = 0; j < largo; j++) {
-			inversionesTotales += calcularInversion(mat, contador, mat[i][j]);
+	Array<int> aplanado = aplanarElTablero(mat);
+	int largo = aplanado.Largo;
+	for (int i = 0; i < largo-1; i++) {
+		for (int j = i+1; j < largo; j++) {
+			if (aplanado[i]!= 0 && aplanado[j]!=0 && aplanado[i] > aplanado[j]) {
+				inversionesTotales++;
+			}
+				
 		}
 	}
 	return inversionesTotales;
@@ -70,30 +74,29 @@ int calcularInversionTablero(Matriz<int> mat) {
 
 bool getBooleanCero(Matriz<int> mat) {
 	int largo = mat.ObtenerAncho();
-	for (int i = 0; i < largo; i++) {
-		for (int j = 0; j < largo; j++) {
-			if (mat[i][j]) {
-				if (j % 2 == 0) {
-					return true;
-				}
-				else {
-					return false;
-				}
+	int columnFromBottom = 0;
+	for (int i = largo-1; i > -1; i--) {
+		for (int j = largo-1; j > -1; j--) {
+			if (mat[i][j]==0) {
+				columnFromBottom = i;
 			}
 		}
 	}
-	return false;
+	return (!((columnFromBottom+1) % 2 == 0));
 }
 bool Sistema::TieneSolucion()
 {
 	int largo = this->tableroInicial.ObtenerTablero().ObtenerAncho();
 	int inversiones = calcularInversionTablero(this->tableroInicial.ObtenerTablero());
-	return ((largo % 2 == 0) && (inversiones % 2 !=0)) || ((largo % 2 != 0) && ((getBooleanCero(this->tableroInicial.ObtenerTablero())) == (inversiones % 2 != 0)));
+
+	//bool conditionOne = (largo % 2 ==0) &&
+
+	return (((largo % 2 != 0) && (inversiones % 2 ==0)) || ((largo % 2 == 0) && ((getBooleanCero(this->tableroInicial.ObtenerTablero())) == (inversiones % 2 == 0))));
 }
 	
 int Sistema::Movimientos()
 {
-	return this->sol.ObtenerCantidadDeMovimientos();
+	return this->cantMovimientosFinal;
 }
 
 Iterador<Tablero> Sistema::Solucionar()
@@ -112,7 +115,8 @@ Iterador<Tablero> Sistema::Solucionar()
 			if (!(itTab.ElementoActual() == listaTab->dato)) {
 				Puntero<NodoTablero> tabL = new NodoTablero(itTab.ElementoActual());
 				tabL->padre=listaTab;
-				this->cp->InsertarConPrioridad(tabL, tabL->dato.CalcularPrioridad());
+				this->cp->InsertarConPrioridad(tabL, (tabL->dato.CalcularPrioridad())+listaTab->dato.ObtenerCantidadDeMovimientos());
+				//this->cp->InsertarConPrioridad(tabL, tabL->dato.CalcularPrioridad());
 			}
 			itTab.Avanzar();
 		}
@@ -125,9 +129,9 @@ Iterador<Tablero> Sistema::Solucionar()
 	}
 	esFinal=Array<Tablero>(cantElem);
 	auxRecor = listaTab;
-	for (int i = cantElem-1; i < -1; i--) {
+	for (int i = cantElem-1; i > -1; i--) {
 		if (i == cantElem - 1) {
-			sol = auxRecor->dato;
+			cantMovimientosFinal = auxRecor->dato.ObtenerCantidadDeMovimientos();
 		}
 		esFinal[i] = auxRecor->dato;
 		auxRecor = auxRecor->padre;

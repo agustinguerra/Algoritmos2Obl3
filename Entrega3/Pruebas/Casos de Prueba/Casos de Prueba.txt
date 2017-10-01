@@ -201,10 +201,26 @@
 
 ----------------------------- Testeo --------------------------------
   Comentario: El tablero tiene solucion
-  Retorno obtenido ERROR, se esperaba OK
+  Retorno obtenido OK
 ---------------------------------------------------------------------
 
 ----------------------------- Testeo --------------------------------
-  Comentario: Se obtuvo 3452816845 y se esperaba 2 movimientos
-  Retorno obtenido ERROR, se esperaba OK
+  Comentario: Se obtuvo 2 y se esperaba 2 movimientos
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+----------------------------- Testeo --------------------------------
+  Comentario: La solución proporcionada es correcta.
+  Retorno obtenido OK
+---------------------------------------------------------------------
+
+
+
+********************************************* Pruebas Pruebas Tablero 2 OK *********************************************
+
+
+
+----------------------------- Testeo --------------------------------
+  Comentario: El tablero tiene solucion
+  Retorno obtenido OK
 ---------------------------------------------------------------------

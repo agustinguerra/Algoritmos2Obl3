@@ -12,7 +12,7 @@ nat PrioridadA::CalcularPrioridad(const Tablero& t) const
 	Iterador<Array<int>> iterador = t.ObtenerTablero().ObtenerIterador();
 	for (int i = 0; i < lar; i++) {
 		for (int j = 0; j < lar; j++) {
-			if (contador == iterador.ElementoActual()[j]) {
+			if (iterador.ElementoActual()[j]==0 || contador == iterador.ElementoActual()[j]) {
 			}
 			else {
 				retorno++;

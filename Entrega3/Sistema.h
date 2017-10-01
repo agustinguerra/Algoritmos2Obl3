@@ -40,6 +40,7 @@ private:
 	Puntero<NodoTablero> listaTab;
 	Array<Tablero> esFinal;
 	Puntero<NodoTablero> auxRecor;
+	int cantMovimientosFinal;
 	//Atributos necesarios para cumplir con las operaciones.
 };
 
